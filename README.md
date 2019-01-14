@@ -19,10 +19,18 @@ cd test
 personal.unlockAccount(web3.eth.accounts[0], "yourPassword")
 ```
 6. Paste your WebDeploy contract into the console
-7. Start mining the contract and wait for `contract mined` message
-8. Call the contract
+7. Start mining the contract
+````
+miner.start(1)
+```
+8. Wait for `contract mined` message
+9. Call the contract
 ```
 greeter.greet()
+```
+10. Clean up the contract from the testing network
+```
+greeter.kill.sendTransaction({from:eth.accounts[0]})
 ```
 
 ## References
